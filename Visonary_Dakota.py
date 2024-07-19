@@ -10,11 +10,11 @@ import os
 nlp = spacy.load("en_core_web_sm")
 
 
-# Initialize YOLO for object detection (assuming you have already configured YOLO)
+# Initialize YOLO for object detection 
 from ultralytics import YOLO
 model = YOLO('yolov8m.pt')
 
-# COCO classes for YOLO
+# COCO classes only 80 classes
 coco_classes = [
     "person", "bicycle", "car", "motorcycle", "airplane", "bus", "train", "truck", 
     "boat", "traffic light", "fire hydrant", "stop sign", "parking meter", "bench", 
@@ -31,7 +31,7 @@ coco_classes = [
 ]
 
 prev_objects = []
-# Initialize video capture
+#  video capture
 cap = cv2.VideoCapture(0)
 cap.set(3, 1280)
 cap.set(4, 720)
@@ -42,7 +42,7 @@ while True:
         print("Failed to capture image from camera.")
         continue
 
-    # Perform object detection with YOLO
+    #  object detection with YOLOv8m
     results = model(img, stream=True)
 
     current_objects = []
@@ -61,7 +61,7 @@ while True:
 
 
             if current_objects != prev_objects:
-    # Generate a descriptive sentence using spaCy
+   
                 if current_objects:
         # Construct a general prompt describing the detected objects
                     object_descriptions = ', '.join(current_objects)
