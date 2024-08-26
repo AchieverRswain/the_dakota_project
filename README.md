@@ -22,6 +22,9 @@ spacy: For natural language processing.
 gTTS: For text-to-speech conversion.
 ultralytics: For YOLOv8 object detection.
 
+![cat2](https://github.com/user-attachments/assets/4d10f999-1b4c-4fa6-8f1b-7dcaaa98e7b9)
+
+
 
 Future Improvements ✅✨
 1) Implement support for multiple languages.
